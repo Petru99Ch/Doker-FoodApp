@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+    pgdb:
+      image: postgres:15.5-bullseye 
+      restart: always
+      environment:
+        POSTGRES_PASSWORD: qazwsx
+        POSTGRES_USER: food
+        POSTGRES_DB: food
+
+      ports: 
+      - 7117:5432
+
+      volumes:
+        - ./data:/var/lib/postgresql/data
